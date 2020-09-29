@@ -35,14 +35,14 @@
                 <ColumnDefinition Width="25"/>
                 <ColumnDefinition Width="25"/>
             </Grid.ColumnDefinitions>
-            <Button Style="{DynamicResource MaterialDesignFlatButton}" Grid.Column="0">
+            <Button Style="{DynamicResource MaterialDesignFlatButton}" Grid.Column="0" Height="Auto">
                 <materialDesign:PackIcon Kind="WindowClose" Margin="-11" />
             </Button>
-            <Button Style="{DynamicResource MaterialDesignFlatButton}" Grid.Column="1">
+            <Button Style="{DynamicResource MaterialDesignFlatButton}" Grid.Column="1" Height="Auto">
                 <materialDesign:PackIcon Kind="WindowMaximize" Margin="-11" />
             </Button>
             <Button Style="{DynamicResource MaterialDesignFlatButton}"
-                    Grid.Column="2">
+                    Grid.Column="2" Height="Auto">
                 <materialDesign:PackIcon Kind="WindowMinimize"
                                          Margin="-11" 
                 />
@@ -155,7 +155,7 @@
 
             </Grid>
             <Grid Grid.Column="1">
-                
+                <local:Glavnaj Margin="10"></local:Glavnaj>
             </Grid>
         </Grid>
     </Grid>
