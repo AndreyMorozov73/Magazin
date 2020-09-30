@@ -14,14 +14,19 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         Title="MainWindow"
-        WindowStyle="SingleBorderWindow"
-        Height="700" Width="1200"
-        MinHeight="700" MinWidth="1200">
+        WindowStyle="None"
+        Height="700" 
+        Width="1200"
+        MinHeight="700" 
+        MinWidth="1200" 
+        WindowStartupLocation="CenterScreen">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <!--ШАПКА-->
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -66,8 +71,10 @@
                                    x:Name="CountingBadge"
                                    BadgeColorZoneMode="PrimaryDark">
                 <Button Style="{DynamicResource MaterialDesignFlatButton}"
-                          Height="25">
-                    <materialDesign:PackIcon Kind="Message" Margin="-11 -5 -11 -11"/>
+                        Height="25">
+                    <materialDesign:PackIcon Kind="Message"
+                                             Margin="-11 -5 -11 -11"
+                    />
                 </Button>
             </materialDesign:Badged>
             <Button Grid.Column="7" 
@@ -77,8 +84,10 @@
                     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                     materialDesign:ButtonProgressAssist.Value="-1"
                     materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-                    Content="{materialDesign:PackIcon DotsHorizontal}" Margin="3" />
+                    Content="{materialDesign:PackIcon DotsHorizontal}" Margin="3" 
+            />
         </Grid>
+        
         <!--Основное-->
         <Grid Grid.Row="1" >
             <Grid.ColumnDefinitions>
@@ -154,6 +163,8 @@
                 </Button>
 
             </Grid>
+            
+            <!--Таблица-->
             <Grid Grid.Column="1">
                 <local:Glavnaj Margin="10"></local:Glavnaj>
             </Grid>

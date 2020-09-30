@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:WpfApp1"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -16,10 +17,17 @@
             <RowDefinition Height="23"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="#FDA4A4A4" Grid.Column="1" RadiusX="8" RadiusY="8" Margin="1">
-            
+        
+        <!--Поиск-->
+        <Rectangle Fill="#FDA4A4A4"
+                   Grid.Column="1"
+                   RadiusX="8" 
+                   RadiusY="8" 
+                   Margin="1">
         </Rectangle>
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="1">
+        <StackPanel Orientation="Horizontal"
+                    Grid.Column="1" 
+                    Margin="1">
             <Button Style="{DynamicResource MaterialDesignToolButton}" 
                     Height="Auto">
                 <materialDesign:PackIcon Kind="Magnify"
@@ -27,7 +35,10 @@
                                          Height="14" 
                 />
                 <Button.Effect>
-                    <DropShadowEffect ShadowDepth="0" BlurRadius="5" Color="Black"/>
+                    <DropShadowEffect ShadowDepth="0" 
+                                      BlurRadius="5" 
+                                      Color="Black"
+                    />
                 </Button.Effect>
             </Button>
             <TextBox materialDesign:HintAssist.Hint="Поиск"
@@ -37,14 +48,51 @@
                      Width="124"   
             />
         </StackPanel>
-        <DataGrid x:Name="grid glav"
-            ItemsSource="{Binding Items2}"
+        <!--Таблица-->
+        <DataGrid x:Name="grid_glav" AutoGenerateColumns="False"
+                  ItemsSource="{Binding Items3}"
                   CanUserAddRows="False"
                   SelectionUnit="Cell" 
                   SelectionMode="Extended" 
                   Grid.Row="1"
                   Grid.ColumnSpan="2"
-                  Margin="2">
+                  Margin="2"
+                  materialDesign:DataGridAssist.CellPadding="4 2 2 2"
+                  materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2"
+                  >
+            <DataGrid.Columns>
+                <materialDesign:DataGridTextColumn Header="ID продукта" 
+                                                   Binding="{Binding id_Pr}" 
+                                                   Width="1*"
+                                                   ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                />
+                <materialDesign:DataGridTextColumn Header="Штрих-код" 
+                                                   Binding="{Binding Barcode}" 
+                                                   Width="1*" 
+                                                   ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                />
+                <materialDesign:DataGridTextColumn Header="Группа" 
+                                                   Binding="{Binding Group}" 
+                                                   Width="1*"
+                                                   ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                />
+                <materialDesign:DataGridTextColumn Header="Бренд" 
+                                                   Binding="{Binding Brend}" 
+                                                   Width="1*"
+                                                   ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                />
+                <materialDesign:DataGridTextColumn Header="Модель"
+                                                   Binding="{Binding Model}" 
+                                                   Width="1*"
+                                                   ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                />
+            </DataGrid.Columns>
+            
             <DataGrid.Effect>
                 <DropShadowEffect ShadowDepth="0" 
                                   BlurRadius="5"

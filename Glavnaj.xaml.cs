@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WpfApp1.Data_base;
 
 namespace WpfApp1
 {
@@ -20,9 +11,18 @@ namespace WpfApp1
     /// </summary>
     public partial class Glavnaj : UserControl
     {
+        Model1 db;
         public Glavnaj()
         {
             InitializeComponent();
+            db = new Model1();
+            db.products.Load();
+            grid_glav.ItemsSource = db.products.Local.ToBindingList();
+            
+            db.Dispose();
+            
         }
+
+
     }
 }
